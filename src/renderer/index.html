@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
+  <title>Inbox Deck</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav id="sidebar">
+    <div id="drag"></div>
+    <ul id="accounts" aria-label="Accounts"></ul>
+    <button id="add" class="tile add" title="Add account (⌘N / Ctrl+N)" aria-label="Add account">+</button>
+  </nav>
+
+  <main id="stage">
+    <section id="welcome" hidden>
+      <h1>Inbox Deck</h1>
+      <p>Keep all your Gmail accounts signed in at once. Each account gets its own private tab, so signing in to one never signs you out of another.</p>
+      <button id="welcome-add" class="primary">Add your first account</button>
+    </section>
+  </main>
+
+  <div id="dialog" hidden>
+    <form id="dialog-form">
+      <h2 id="dialog-title">Add account</h2>
+      <label for="dialog-input">Name for this account</label>
+      <input id="dialog-input" type="text" autocomplete="off" placeholder="e.g. Work, Personal, Store">
+      <p id="dialog-hint">You'll sign in to Google on the next screen.</p>
+      <div class="buttons">
+        <button type="button" id="dialog-cancel">Cancel</button>
+        <button type="submit" class="primary" id="dialog-ok">Add</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="sidebar.js"></script>
+</body>
+</html>
